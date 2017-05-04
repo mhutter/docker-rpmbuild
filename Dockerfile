@@ -5,7 +5,8 @@ MAINTAINER Manuel Hutter <manuel@hutter.io>
 
 RUN set -x && \
     yum update -y && \
-    yum install -y rpm-build git curl make && \
+    yum install -y epel-release && \
+    yum install -y rpm-build git curl make python34-devel && \
     yum clean all && \
     useradd -c Builder -m -U builder && \
     mkdir -p /home/builder/rpmbuild/{SOURCES,SPECS} && \
